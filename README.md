@@ -26,37 +26,33 @@ Style can be passed similar to any other react component. The passed in style wi
 ### items
 An array of objects containing information about what elements to render:
 
-#### ELEMENT
-    {
-      type: DropdownMenuConstants.DropdownMenuTypes.ELEMENT
-      element: {<a href="some/link-here>Click Me</a>}
-    }
+## EXAMPLE
+Here is an example of how to use the dropdown menu
 
-#### DIVIDER
-    {
-      type: DropdownMenuConstants.DropdownMenuTypes.DIVIDER
-    }
-
-#### EMBEDDED DROPDOWN
-    {
-      title:'More Apps',
-      type: DropdownMenuConstants.DropdownMenuTypes.DROPDOWN,
-      items:[
-        {
-          type: DropdownMenuConstants.DropdownMenuTypes.ELEMENT
-          element: {<a href="some/link-here>Click Me</a>}
-        },
-        {
-          type: DropdownMenuConstants.DropdownMenuTypes.ELEMENT
-          element: {<a href="some/link-here>Click Me</a>}
-        }
-      ]
-    }
+    <DropdownMenu
+      title={<div style={{fontSize:"2em"}} >Menu</div>}
+      enableChevron={true}
+      dropdownLocation="bottom-right"
+      style={{backgroundColor:'red', color:'green'}}>
+        
+      <a style={{color: 'purple'}} href='/blog'>BLOG</a>
+      <hr style={{borderColor: 'white'}} />
+      <DropdownMenu
+        style={{color: 'blue'}}
+        title={'More Apps'}>
+          <a href='/app1'>App 1</a>
+          <a href='/app2'>App 2 Link</a>
+        </DropdownMenu>
+        <hr style={{borderColor: 'white'}} />
+        <a href='/store'>STORE</a>
+        <button href='/app1'>I'm a Button</button>
+        <hr style={{borderColor: 'white'}} />
+        <a href='/app3'>App 3</a>
+        <hr style={{borderColor: 'white'}} />
+        <a href='/about' style={{color: 'red'}}>About</a>
+        <hr style={{borderColor: 'white'}} />
+    </DropdownMenu>
 
 ## Future Plans
-- Mobile Sizing Feature
-    - Enable button height to be mobile friendly (58px)
-- Allow non-link functions
-    - Allow consumer to pass in handlers for the items, allowing more than just navigation links
 - Full Screen Left and Right Options
 - Unit Tests

@@ -1,42 +1,31 @@
-.dropdownMenu{
+.react-auto-dropdown-menu{
   display: flex;
   flex-direction: column;
   text-align: left;
   cursor: pointer;
 }
 
-.dropdownMenuExpanded{
-  padding: 10px 30px 0px 10px;
-  border-radius: 3px;
-  background-color: rgba(0, 0, 0, .9);
-}
-
-.dropdownMenuEmbedded{
+.react-auto-dropdown-menu-embedded{
   padding-left: 10px;
   padding-bottom: 10px;
   border-radius: 3px;
   background-color: transparent;
 }
 
-.dropdownMenuExpandedTopLevel{
+.react-auto-dropdown-menu-expanded-top-level{
   position: absolute;
+  padding: 10px 30px 0px 10px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, .9);
 }
 
-.dropdownMenuItemList{
-  color: white;
+.react-auto-dropdown-menu-item-list{
   text-decoration: none;
   list-style-type:none;
   margin-left: 5px;
 }
 
-.dropdownMenuItemList > a {
+.react-auto-dropdown-menu-item-list > a {
   text-decoration: none;
   text-align: left;
-}
-
-.dropdownMenuItemDivider{
-  width: 90%;
-  margin: 5px 0%;
-  text-decoration: none;
-  list-style-type:none;
 }
