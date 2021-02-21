@@ -75,7 +75,6 @@ const DropdownMenu = props => {
     const currentStyling = {color: props.style?.color || 'white'}
 
     const styleToApply = {...currentStyling, ...childStyling}
-    console.log(styleToApply)
     // If the defaulted property is detected, mark the element as embedded
     if(child?.props?.componentType === 'dropdown-menu'){
       return React.cloneElement(child, {isEmbedded:true, dropdownLocation: props.dropdownLocation, style: styleToApply})
