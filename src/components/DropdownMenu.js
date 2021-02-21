@@ -45,6 +45,9 @@ const DropdownMenu = props => {
           case "full-screen":
             setPositionStyle({left:'0px', top: '0px', width: 'calc(90% - 10px)', height:'calc(100% - 10px)', marginTop:'0px', ...props.style})
             break;
+          case "full-screen-right":
+            setPositionStyle({right:'0px', top: '0px', width: 'calc(90% - 10px)', height:'calc(100% - 10px)', marginTop:'0px', textAlign: 'right', ...props.style})
+            break;
           case "left":
             setPositionStyle({right:`${window.innerWidth - dropdownMenuDiv.offsetLeft}px`, top: `${dropdownMenuDiv.offsetTop}px`, ...props.style})
             break;
@@ -72,9 +75,10 @@ const DropdownMenu = props => {
     const currentStyling = {color: props.style?.color || 'white'}
 
     const styleToApply = {...currentStyling, ...childStyling}
+    console.log(styleToApply)
     // If the defaulted property is detected, mark the element as embedded
     if(child?.props?.componentType === 'dropdown-menu'){
-      return React.cloneElement(child, {isEmbedded:true, style: styleToApply})
+      return React.cloneElement(child, {isEmbedded:true, dropdownLocation: props.dropdownLocation, style: styleToApply})
     }
 
     return React.cloneElement(child, {style: styleToApply})
@@ -84,7 +88,7 @@ const DropdownMenu = props => {
     <div id={`topLevelMenu_seed${idSeed}`} className="dropdownMenu" ref={wrapperRef}>
 
       {/* Title / Button */}
-      <div onClick={()=>setIsOpen(!isOpen)}>
+      <div onClick={()=>setIsOpen(!isOpen)} style={props.isEmbedded && {color: props.style?.color || 'white'}}>
         {/* Determine if the main icon/title should be used or the chevron */}
         {props.isEmbedded && props.enableChevron && <span><FontAwesomeIcon icon={isOpen ? faAngleDown : faAngleRight}/> </span>} 
         {props.title}
@@ -92,7 +96,7 @@ const DropdownMenu = props => {
 
       {isOpen &&
         // Determine dropdown menu styling based on if it is the top level or embedded 
-        <ul className={`${!props.isEmbedded ? 'react-auto-dropdown-menu-expanded-top-level' : 'react-auto-dropdown-menu-embedded'}`} style={positionStyle}>
+        <ul className={`${!props.isEmbedded ? 'react-auto-dropdown-menu-expanded-top-level' : props.dropdownLocation === 'full-screen-right'? 'react-auto-dropdown-menu-embedded-right' : 'react-auto-dropdown-menu-embedded'}`} style={positionStyle}>
           {props.children.map((child,index)=>{
             return (
               <li className="react-auto-dropdown-menu-item-list" key={`Dropdown-Item-${index}-${child.type.toString()}`}>

@@ -54,5 +54,4 @@ Here is an example of how to use the dropdown menu
     </DropdownMenu>
 
 ## Future Plans
-- Full Screen Left and Right Options
 - Unit Tests

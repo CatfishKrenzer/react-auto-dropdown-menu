@@ -12,6 +12,13 @@
   background-color: transparent;
 }
 
+.react-auto-dropdown-menu-embedded-right{
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 3px;
+  background-color: transparent;
+}
+
 .react-auto-dropdown-menu-expanded-top-level{
   position: absolute;
   padding: 10px 30px 0px 10px;

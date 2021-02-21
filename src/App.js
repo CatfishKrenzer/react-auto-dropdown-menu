@@ -5,13 +5,13 @@ function App() {
         <DropdownMenu
           title={<div style={{fontSize:"2em"}} >Menu</div>}
           enableChevron={true}
-          dropdownLocation="bottom-right"
-          style={{backgroundColor:'red', color:'green'}}>
+          dropdownLocation="full-screen"
+          // style={{backgroundColor:'red', color:'green'}}
+          >
             
           <a style={{color: 'purple'}} href='/blog'>BLOG</a>
           <hr style={{borderColor: 'white'}} />
           <DropdownMenu
-            style={{color: 'blue'}}
             title={'More Apps'}>
               <a href='/app1'>App 1</a>
               <a href='/app2'>App 2 Link</a>
