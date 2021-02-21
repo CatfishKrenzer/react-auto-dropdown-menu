@@ -1,0 +1,42 @@
+.dropdownMenu{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdownMenuExpanded{
+  padding: 10px 30px 0px 10px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, .9);
+}
+
+.dropdownMenuEmbedded{
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.dropdownMenuExpandedTopLevel{
+  position: absolute;
+}
+
+.dropdownMenuItemList{
+  color: white;
+  text-decoration: none;
+  list-style-type:none;
+  margin-left: 5px;
+}
+
+.dropdownMenuItemList > a {
+  text-decoration: none;
+  text-align: left;
+}
+
+.dropdownMenuItemDivider{
+  width: 90%;
+  margin: 5px 0%;
+  text-decoration: none;
+  list-style-type:none;
+}

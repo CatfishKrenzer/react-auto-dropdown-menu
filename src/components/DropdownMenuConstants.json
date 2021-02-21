@@ -1,0 +1,7 @@
+ {
+  "DropdownMenuTypes":{
+    "DROPDOWN":0,
+    "ELEMENT":1,
+    "DIVIDER":2
+  }
+}
