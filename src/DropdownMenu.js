@@ -116,4 +116,5 @@ DropdownMenu.defaultProps = {
   items: [],
   componentType: 'dropdown-menu'
 }
+
 export default DropdownMenu;

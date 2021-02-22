@@ -1,7 +1,6 @@
 {
-  "name": "react-auto-dropdown-menu",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@catfishkrenzer/react-auto-dropdown-menu",
+  "version": "1.0.0",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
@@ -11,7 +10,7 @@
     "@testing-library/user-event": "^12.7.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "^4.0.2"
+    "react-scripts": "4.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
