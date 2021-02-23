@@ -5,6 +5,10 @@
   cursor: pointer;
 }
 
+.react-auto-dropdown-menu-cursor{
+  cursor: pointer;
+}
+
 .react-auto-dropdown-menu-embedded-chevron{
   margin: auto 5px;
 }

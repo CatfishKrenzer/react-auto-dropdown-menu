@@ -87,7 +87,7 @@ const DropdownMenu = props => {
     <div id={`topLevelMenu_seed${idSeed}`} className="dropdownMenu" ref={wrapperRef}>
 
       {/* Title / Button */}
-      <div onClick={()=>setIsOpen(!isOpen)} style={props.isEmbedded ? {color: props.style?.color || 'white', display:'flex', flexDirection:'row'} : {}}>
+      <div onClick={()=>setIsOpen(!isOpen)} className="react-auto-dropdown-menu-cursor" style={props.isEmbedded ? {color: props.style?.color || 'white', display:'flex', flexDirection:'row'} : {}}>
         {/* Determine if the main icon/title should be used or the chevron */}
         {props.isEmbedded && props.enableChevron && <span className="react-auto-dropdown-menu-embedded-chevron"><FontAwesomeIcon icon={isOpen ? faAngleDown : faAngleRight}/> </span>} 
         {props.title}
