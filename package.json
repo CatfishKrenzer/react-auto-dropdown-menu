@@ -1,6 +1,6 @@
 {
   "name": "@catfishkrenzer/react-auto-dropdown-menu",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/DropdownMenu.min.js",
   "publishConfig": {
     "access": "public"
