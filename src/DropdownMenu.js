@@ -67,7 +67,7 @@ const DropdownMenu = props => {
         }
       }
     }
-  }, [idSeed, props.dropdownLocation])
+  }, [idSeed, isOpen, props.style, props.dropdownLocation])
 
   const childOrEmbeddedMenu = (child) => {
     // Apply color styling from top level menu, or default. But allow passed in style to overwrite
