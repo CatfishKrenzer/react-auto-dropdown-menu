@@ -7,6 +7,7 @@ const DropdownMenu = props => {
   const [isOpen, setIsOpen] = useState(false);
   const [idSeed, setIdSeed] = useState(0);
   const [positionStyle, setPositionStyle] = useState({});
+  const [animationClass, setAnimationClass] = useState('');
 
   // Create a reference to this element, only used by the top level menu
   const wrapperRef = useRef();
@@ -14,7 +15,36 @@ const DropdownMenu = props => {
   // Close the menu if user clicks outside of the menu
   const handleClickOutside = (event) => {
     if (!wrapperRef?.current?.contains(event.target)) {
-      setIsOpen(false);
+      setOpenClosed(false);
+    }
+  }
+
+  const getAnimationClass = (state) => {
+    if(!props.isEmbedded){
+      switch(props.dropdownLocation){
+        case "full-screen":
+          return `react-auto-dropdown-menu-slide-${state ? 'in':'out'}-left`;
+        case "full-screen-right":
+          return `react-auto-dropdown-menu-slide-${state ? 'in':'out'}-right`;
+        default:
+          // Only full screen animations are supported
+          return '';
+      }
+    }
+  }
+
+  const setOpenClosed = (state) => {
+    setAnimationClass(getAnimationClass(state));
+    if(!state){
+      if(props.animate){
+        setTimeout(()=>{
+          setIsOpen(false);
+        }, 500)
+      } else {
+        setIsOpen(false);
+      }
+    } else {
+      setIsOpen(true);
     }
   }
 
@@ -87,7 +117,7 @@ const DropdownMenu = props => {
     <div id={`topLevelMenu_seed${idSeed}`} className="dropdownMenu" ref={wrapperRef}>
 
       {/* Title / Button */}
-      <div onClick={()=>setIsOpen(!isOpen)} className="react-auto-dropdown-menu-cursor" style={props.isEmbedded ? {color: props.style?.color || 'white', display:'flex', flexDirection:'row'} : {}}>
+      <div onClick={()=>setOpenClosed(!isOpen)} className="react-auto-dropdown-menu-cursor" style={props.isEmbedded ? {color: props.style?.color || 'white', display:'flex', flexDirection:'row'} : {}}>
         {/* Determine if the main icon/title should be used or the chevron */}
         {props.isEmbedded && props.enableChevron && <span className="react-auto-dropdown-menu-embedded-chevron"><FontAwesomeIcon icon={isOpen ? faAngleDown : faAngleRight}/> </span>} 
         {props.title}
@@ -95,7 +125,7 @@ const DropdownMenu = props => {
 
       {isOpen &&
         // Determine dropdown menu styling based on if it is the top level or embedded 
-        <ul className={`${!props.isEmbedded ? 'react-auto-dropdown-menu-expanded-top-level' : props.dropdownLocation === 'full-screen-right'? 'react-auto-dropdown-menu-embedded-right' : 'react-auto-dropdown-menu-embedded'}`} style={positionStyle}>
+        <ul className={`${!props.isEmbedded ? 'react-auto-dropdown-menu-expanded-top-level' : props.dropdownLocation === 'full-screen-right'? 'react-auto-dropdown-menu-embedded-right' : 'react-auto-dropdown-menu-embedded'}  ${props.animate && animationClass}`} style={positionStyle}>
           {props.children.map((child,index)=>{
             return (
               <li className="react-auto-dropdown-menu-item-list" key={`Dropdown-Item-${index}-${child.type.toString()}`}>

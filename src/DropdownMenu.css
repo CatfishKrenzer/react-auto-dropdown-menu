@@ -44,3 +44,67 @@
   text-decoration: none;
   text-align: left;
 }
+
+.react-auto-dropdown-menu-slide-in-left {
+    position: absolute;
+    -webkit-animation: slide-in-left 0.5s cubic-bezier(0.7, 0.25, 0.7, 1);
+    animation: slide-in-left 0.5s cubic-bezier(0.7, 0.25, 0.7, 1);
+}
+
+@-webkit-keyframes slide-in-left {
+  0% { left: -100%; }
+  100% { left: 0; }
+}
+
+@keyframes slide-in-left {
+  0% { left: -100%; }
+  100% { left: 0; }
+}
+
+.react-auto-dropdown-menu-slide-out-left {
+  position: absolute;
+  -webkit-animation: slide-out-left 0.5s linear;
+  animation: slide-out-left 0.5s linear;
+}
+
+@-webkit-keyframes slide-out-left {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
+@keyframes slide-out-left {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
+.react-auto-dropdown-menu-slide-in-right {
+  position: absolute;
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.7, 0.25, 0.7, 1);
+  animation: slide-in-right 0.5s cubic-bezier(0.7, 0.25, 0.7, 1);
+}
+
+@-webkit-keyframes slide-in-right {
+  0% { right: -100%; }
+  100% { right: 0; }
+}
+
+@keyframes slide-in-right {
+  0% { right: -100%; }
+  100% { right: 0; }
+}
+
+.react-auto-dropdown-menu-slide-out-right {
+  position: absolute;
+  -webkit-animation: slide-out-right 0.5s linear;
+  animation: slide-out-right 0.5s linear;
+}
+
+@-webkit-keyframes slide-out-right {
+  0% { right: 0; }
+  100% { right: -100%; }
+}
+
+@keyframes slide-out-right {
+  0% { right: 0; }
+  100% { right: -100%; }
+}
