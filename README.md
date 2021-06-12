@@ -1,5 +1,5 @@
 # Getting Started with react-auto-dropdown-menu
-
+NPM Link: https://www.npmjs.com/package/@catfishkrenzer/react-auto-dropdown-menu
 ## Props
 Available properties and descriptions for usage:
 
