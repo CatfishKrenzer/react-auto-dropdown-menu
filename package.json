@@ -1,13 +1,13 @@
 {
   "name": "@catfishkrenzer/react-auto-dropdown-menu",
-  "version": "1.0.7",
-  "main": "src/DropdownMenu.js",
+  "version": "1.0.8",
+  "main": "dist/DropdownMenu.min.js",
   "publishConfig": {
     "access": "public"
   },
   "peerDependencies": {
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react": "16.11 - 17",
+    "react-dom": "16.11 - 17"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
@@ -16,7 +16,8 @@
     "postcss": "^8.2.6"
   },
   "scripts": {
-    "build": "rollup -c -o dist/DropdownMenu.min.js"
+    "build": "rollup -c -o dist/DropdownMenu.min.js",
+    "local-publish": "local-package-publisher -p"
   },
   "eslintConfig": {
     "extends": [
